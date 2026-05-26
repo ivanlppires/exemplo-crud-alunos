@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+    EXEMPLO DIDÁTICO — CRUD de Cadastro de Alunos
+    Disciplina: Introdução ao Desenvolvimento Web (IDW) — UNEMAT — 2026/1
+    Professor: Ivan Luiz Pedroso Pires
+
+    Este exemplo NÃO é a sua avaliação. É um material de estudo.
+    Sua avaliação tem outro tema (Agenda de Contatos). Leia o PDF da atividade.
+-->
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exemplo CRUD — Cadastro de Alunos</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cadastro de Alunos</h1>
+        <p class="subtitulo">Exemplo didático de CRUD em JavaScript — IDW 2026/1</p>
+    </header>
+
+    <!--
+        ÁREA 1 — FORMULÁRIO
+        Aqui o usuário digita os dados de um aluno.
+        Note que cada <input> tem um id único. É por esse id que o JS encontra o campo.
+    -->
+    <section class="card">
+        <h2 id="tituloFormulario">Novo aluno</h2>
+
+        <div class="campo">
+            <label for="nome">Nome do aluno</label>
+            <input type="text" id="nome" placeholder="Ex: Maria da Silva">
+        </div>
+
+        <div class="campo">
+            <label for="matricula">Matrícula</label>
+            <input type="text" id="matricula" placeholder="Ex: 2026001">
+        </div>
+
+        <!--
+            Repare nos DOIS botões abaixo:
+            - "salvar" funciona tanto para CRIAR um aluno novo
+              quanto para ATUALIZAR um aluno existente (modo edição).
+            - "cancelar" só aparece quando estamos editando, para desistir da edição.
+            A lógica de qual modo está ativo está no main.js (variável indiceEditando).
+        -->
+        <div class="botoes">
+            <button id="salvar">Salvar</button>
+            <button id="cancelar" class="secundario escondido">Cancelar edição</button>
+        </div>
+    </section>
+
+    <!--
+        ÁREA 2 — LISTA DE ALUNOS
+        A <div id="lista"> começa vazia. O JavaScript vai escrever dentro dela
+        usando innerHTML toda vez que a lista mudar (criar, editar, excluir).
+    -->
+    <section class="card">
+        <h2>Alunos cadastrados</h2>
+        <div id="lista"></div>
+    </section>
+
+    <!--
+        IMPORTANTE: o <script> fica no FINAL do <body>.
+        Assim, quando o JS rodar, todos os elementos HTML acima já existem
+        e o querySelector consegue achá-los.
+    -->
+    <script src="main.js"></script>
+</body>
+</html>

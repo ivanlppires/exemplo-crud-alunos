@@ -1,0 +1,164 @@
+/* =========================================================
+   EXEMPLO DIDÁTICO — CRUD de Cadastro de Alunos
+   Disciplina: Introdução ao Desenvolvimento Web — UNEMAT — 2026/1
+   Professor: Ivan Luiz Pedroso Pires
+
+   Este CSS é simples de propósito. Você pode (e deve) deixar
+   a sua avaliação com um visual diferente. Capricho conta.
+   ========================================================= */
+
+/* Reset bem básico: tira margem/padding padrão e usa box-sizing previsível. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1f2937;
+    color: #f3f4f6;
+    padding: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+header h1 {
+    color: #60a5fa;
+    margin-bottom: 4px;
+}
+
+.subtitulo {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* "Cards" são as caixas brancas em torno do formulário e da lista. */
+.card {
+    background-color: #374151;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    margin-bottom: 16px;
+    color: #93c5fd;
+    font-size: 18px;
+}
+
+.campo {
+    margin-bottom: 12px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+.campo input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #4b5563;
+    background-color: #1f2937;
+    color: #f3f4f6;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #60a5fa;
+}
+
+.botoes {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2563eb;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+button.secundario {
+    background-color: #6b7280;
+}
+
+button.secundario:hover {
+    background-color: #4b5563;
+}
+
+/* Classe "escondido": serve para esconder o botão de cancelar quando
+   não estamos editando. O JS adiciona/remove essa classe conforme o modo. */
+.escondido {
+    display: none;
+}
+
+/* ===== Itens da lista =====
+   Cada aluno é exibido como um "row" com nome, matrícula e dois botões. */
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #1f2937;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.item-dados strong {
+    color: #fbbf24;
+}
+
+.item-acoes {
+    display: flex;
+    gap: 6px;
+}
+
+.item-acoes button {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.item-acoes .editar {
+    background-color: #10b981;
+}
+
+.item-acoes .editar:hover {
+    background-color: #059669;
+}
+
+.item-acoes .excluir {
+    background-color: #ef4444;
+}
+
+.item-acoes .excluir:hover {
+    background-color: #dc2626;
+}
+
+.lista-vazia {
+    color: #9ca3af;
+    font-style: italic;
+    text-align: center;
+    padding: 12px;
+}
