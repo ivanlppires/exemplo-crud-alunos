@@ -158,6 +158,7 @@ const conectarBotoesDeCadaAluno = () => {
             // Pega o índice que ficou guardado no atributo data-indice.
             // Como ele vem como texto, convertemos para número com parseInt.
             const indice = parseInt(botao.dataset.indice);
+            console.log(botao.dataset)
             entrarModoEdicao(indice);
         });
     }
